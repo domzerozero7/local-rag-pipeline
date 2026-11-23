@@ -1,3 +1,4 @@
+import os
 import psycopg
 from pgvector.psycopg import register_vector
 import urllib.request
@@ -19,9 +20,12 @@ documents = [
 ]
 
 print("Connecting to vector_db on lab-host...")
-conn = psycopg.connect("host=localhost dbname=vector_db user=ai_user password=Password123")
+DB_DSN = os.getenv(
+    "VECTOR_DB_DSN",
+    "host=localhost dbname=vector_db user=ai_user",
+)
+conn = psycopg.connect(DB_DSN)
 register_vector(conn)
-
 with conn.cursor() as cur:
     # 1. Create permanent table
     cur.execute("""
