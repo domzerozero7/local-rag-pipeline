@@ -19,10 +19,10 @@ documents = [
     "Tailscale constructs secure, zero-trust WireGuard mesh networks across distributed hosts."
 ]
 
-print("Connecting to vector_db on lab-host...")
+print("Connecting to vector_db on lab...")
 DB_DSN = os.getenv(
     "VECTOR_DB_DSN",
-    "host=localhost dbname=vector_db user=ai_user",
+    "host=localhost dbname=vector_db user=user",
 )
 conn = psycopg.connect(DB_DSN)
 register_vector(conn)
