@@ -2,7 +2,7 @@ import psycopg
 import requests
 
 # 1. Connect to local PostgreSQL
-conn = psycopg.connect("dbname=vector_db user=nick")
+conn = psycopg.connect("dbname=vector_db user=user")
 cur = conn.cursor()
 
 # 2. Define Query
