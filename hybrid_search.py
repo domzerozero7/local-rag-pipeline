@@ -2,7 +2,7 @@ import psycopg
 from psycopg.rows import dict_row
 
 # Database connection settings
-DB_URI = 
+DB_URI = os.getenv("DATABASE_URL", "postgresql://localhost:5432/postgres")
 
 def setup_hybrid_schema(conn):
     """Adds a tsvector column for native PostgreSQL full-text search."""
