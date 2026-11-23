@@ -6,7 +6,7 @@ import numpy as np
 # Connect using VECTOR_DB_DSN or ~/.pgpass on lab-host
 DB_DSN = os.getenv(
     "VECTOR_DB_DSN",
-    "host=localhost dbname=vector_db user=ai_user",
+    "host=localhost dbname=vector_db user=user",
 )
 conn = psycopg.connect(DB_DSN)
 register_vector(conn)
